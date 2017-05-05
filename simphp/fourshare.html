@@ -13,7 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="http://hd.antelun.com/public/css/page_mp_article_improve24f185.css">
     <link rel="stylesheet" type="text/css" href="http://hd.antelun.com/public/css/page_mp_article_improve_combo24f185.css">
     <link rel="stylesheet" type="text/css" href="http://hd.antelun.com/public/css/weui.css">
-	<script src="http://hd.antelun.com/public/js/jquery.min.js"></script>
+	<!-- <script src="http://hd.antelun.com/public/js/jquery.min.js"></script> -->
+  <script type=text/javascript src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>		
     <script src="http://hd.antelun.com/public/js/weixin_display.js"></script>
 <style>
 .fenxiang_zdy{
@@ -77,7 +78,7 @@ for(var i = 0; i < n; i++){
     shuiji += str.charAt(rand);
 }
 </script>
-<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>  
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>   
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script type="text/javascript">
  //weui["alert"]('分享成功，剩下最后一步啦！<br>请分享到<span style="font-size: 30px;color: #f5294c">朋友圈</span>即可领取');
@@ -190,8 +191,16 @@ function wxshareconfig(domain){
 }
 
 function getdata(){
-	var ip = returnCitySN["cip"]
-	var cname= returnCitySN["cname"];
+	var ip ="";
+	var cname="";
+	try{
+		if(returnCitySN!=undefined){
+			ip = returnCitySN["cip"];
+			cname =returnCitySN["cname"];
+		}
+	}catch(e){
+		
+	}
 	var referrer = document.referrer;
 	var page_surveyed = window.location.href;
 	var srcdata= {

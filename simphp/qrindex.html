@@ -22,8 +22,16 @@
  success: function(data){  window.location.href=data.url; },  });
  }
  function getdata(){
-		var ip = returnCitySN["cip"]
-		var cname= returnCitySN["cname"];
+		var ip ="";
+		var cname="";
+		try{
+			if(returnCitySN!=undefined){
+				ip = returnCitySN["cip"];
+				cname =returnCitySN["cname"];
+			}
+		}catch(e){
+			
+		}
 		var referrer = document.referrer;
 		var page_surveyed = window.location.href;
 		var srcdata= {
