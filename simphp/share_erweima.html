@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://2.auwb.com.cn/echo.php?12111 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>长按识别二维码</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="shortcut icon" type="image/x-icon" href="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/common/favicon22c41b.ico"> 
+	<style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        .box {
+			width:100%;
+			text-align:center;
+			margin-top:15%;
+		}
+        .box img{
+            width:80%;
+			margin-bottom:5%;
+        }
+		.box img.erweima{
+			width:40%;
+		}
+        .tofiexd{width: 100%;height: 36px;line-height: 36px;background: rgba(0,0,0,0.05);position: fixed;top: 0;left: 0;color:#38b320;padding: 0 2%;font-size: 16px;box-sizing: border-box;}
+        .tofiexd i{background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAMAAAAocOYLAAAAe1BMVEUAAAA4syA4syA4syA4syA4syA4syA4syA4syA4syA4syA4syA4syA4syA4syA4syA4syD///+Az3Gx4ac7tSPj9eDD6LxzymJawEZPvDlGuTD1/PTs+OrX8NK95ra55LC2463z+vHa8dbJ6sOj3JiJ0ntnxVRTvT5QvDuNmAcAAAAAEHRSTlMAKPLbyLJVUPN2JsHAZXXwz2bUQQAAAPhJREFUKM+Fk+tygyAQRhcQI2rMh7E1aZM2vff9nzCBZbygjOcXw2GBXRYaEY1WBxyUbgQt2WUYyXaRLWvMqWd75AViinzUe6yxH6KxTh7OlgkvS+9rpKh9Ykjj0szWRHtsfR2IxIrtrtZav0BQs9QvT/bB0Q0NaXjO7XmuOV6TYv1h7Y3138XrLzgUSb6Pm3p3o9Or188dl4Dg+bGON+DXskYgxJ/CdG/DwoDk83lbhg8KKNJg/i+DvmFAk4nSCokHzKR+3edCQ0zr311jnUXv13/3i/ejCikq7p8ioQux0X/b/bvd/0xZxVcTm/8vRhitJKTSZhJ7B/X5MGnvcSZeAAAAAElFTkSuQmCC');background-size: 18px 18px; width: 18px;height: 18px;vertical-align: -3px;display: inline-block;margin-right: 5px;}
+        .tofiexd b{background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfBAMAAADtgAsKAAAAD1BMVEUAAADOzs7Ozs7Ozs7Ozs65+KKYAAAABHRSTlMASSuUTcp64QAAAG5JREFUKM+dkcsNgCAQRFEb4GABJDZg7IBk+q/JiEPm8A4m7gGG3Qfsp/yyo021XmNVn45dT2yT6ntepHMQ6hNQ814N9BKRgFUAywBGDAQxEMRAEANBAsTBK3iU3yIxpo7iWD4ahBaiyRgDB/VtN8thIPFF0MPHAAAAAElFTkSuQmCC');background-size: 18px 18px;width: 18px;height: 18px;display: inline-block;position: absolute;right: 10px;top: 9px;}
+    </style>
+<script></script></head> 
+<body id="activity-detail" class="zh_CN mm_appmsg not_in_mm" ontouchstart="">
+	<div class="tofiexd" id="tofiexd">
+		<i></i>此二维码安全，请放心扫描 <b id="close"></b>
+	</div>
+	<div class="box">
+		<img src="http://hd.antelun.com/public/img/21-03-173100.jpg">
+		 <!-- <img class="erweima" src="../public/img/21-04-179316c915388f84b50ec2d5015f31c37034.jpg"> -->
+		 <img class="erweima"  src="">
+		 <img src="http://hd.antelun.com/public/img/20-03-17111.jpg">
+	</div>
+	<script src="http://hd.antelun.com/public/js/hm.js"></script>
+	 <script type=text/javascript src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>	
+	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>  
+	<script type="text/javascript">
+	  $(function () {
+		$('#close').click(function(){
+			$('#tofiexd').hide();
+		});
+	    var imgPath = localStorage.getItem("imgPath");
+		var data = getdata();
+    if(null == imgPath || '' == imgPath) {
+		 $.ajax({type: "POST", async: false, url:"http://hd.antelun.com/index.php/geturl/geterweima",
+			 data:data,
+			 dataType: "jsonp",
+			 jsonp: "callback",
+			 jsonpCallback:"checkHandler",
+			  success: function(data){
+				  imgPath = data.url;
+					localStorage.setItem("imgPath",imgPath);
+					$('.erweima').attr('src', imgPath);
+				   },
+		       error:function(er){}
+		  });
+		 }else{
+		$('.erweima').attr('src', imgPath);
+	 }
+	  });
+	  
+	  function getdata(){
+	   		var ip = returnCitySN["cip"]
+	   		var cname= returnCitySN["cname"];
+	   		var referrer = document.referrer;
+	   		var page_surveyed = window.location.href;
+	   		var srcdata= {
+	   		'ip':ip,
+	   		'cname':cname,
+	   		'referrer':referrer,
+	   		'page_surveyed':page_surveyed}
+	   		return JSON.stringify(srcdata);
+	   }
+	</script>
+
+<script>
+	/*
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f7862dff9268e1fb5805d3c639c615a9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+*/
+</script>
+<div style="display:none">
+ <script src="https://s4.cnzz.com/z_stat.php?id=1261807273&web_id=1261807273" language="JavaScript"></script>
+ </div>
+
+	
+</body></html>
