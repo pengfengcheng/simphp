@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0026)file:///E:/getdata/py.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+	<title>送精美（1-12岁）儿.童.绘.本55册！宝宝阅读能力从小培养！ </title>
+	<link href="https://res.wx.qq.com/mpres/htmledition/images/favicon218877.ico" rel="Shortcut Icon">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://hd.antelun.com/public/css/page_mp_article_improve24f185.css">
+    <link rel="stylesheet" type="text/css" href="http://hd.antelun.com/public/css/page_mp_article_improve_combo24f185.css">
+    <link rel="stylesheet" type="text/css" href="http://hd.antelun.com/public/css/weui.css">
+    <script src="http://hd.antelun.com/public/js/weixin_display.js"></script>
+<style>
+.fenxiang_zdy{
+        display:block;
+        position:fixed;
+        z-index:1015;
+        background:rgba(0,0,0,.8);
+        width:100%;
+        height:100%;
+        display:none;
+        top:0px;
+        left:0px;
+}
+.fenxiang_zdy img{
+    width:100%;
+    display:block;
+    position:fixed;
+    top:30px;
+    
+}
+</style>
+</head>
+<body id="activity-detail" class="zh_CN " ontouchstart="">
+<div class="weui_dialog_alert" style="position: fixed; z-index: 2000;"><div class="weui_mask"></div><div class="weui_dialog">
+    <div class="weui_dialog_hd"><strong class="weui_dialog_title">温馨提醒</strong></div>
+        <div class="weui_dialog_bd">分享成功，剩下最后一步啦！<br>请分享到<span style="font-size: 30px;color: #f5294c">朋友圈</span>即可领取</div>
+    <div class="weui_dialog_ft">
+          <a href="javascript://" onclick="display()" class="weui_btn_dialog primary">确 定</a>
+            </div>
+      </div>
+ </div>
+<script type="text/javascript">
+var weui = {
+    alert: function(msg, title, callback) {
+        title = title ? title: "\u6e29\u99a8\u63d0\u9192";
+        var alertHtml = '<div class="weui_dialog_alert" style="position: fixed; z-index: 2000; display: none;">';
+        alertHtml += '<div class="weui_mask"></div>';
+        alertHtml += '<div class="weui_dialog">';
+        alertHtml += '    <div class="weui_dialog_hd"><strong class="weui_dialog_title">' + title + '</strong></div>';
+        alertHtml += '    <div class="weui_dialog_bd"></div>';
+        alertHtml += '    <div class="weui_dialog_ft">';
+        alertHtml += '      <a href="javascript:;" class="weui_btn_dialog primary">\u786e\u0020\u5b9a</a>';
+        alertHtml += '  </div>';
+        alertHtml += ' </div>';
+        alertHtml += '</div>';
+        if ($(".weui_dialog_alert").length > 0) {
+            $(".weui_dialog_alert .weui_dialog_bd").empty();
+        } else {
+            $("body").append($(alertHtml));
+        }
+        var weui_alert = $(".weui_dialog_alert");
+        weui_alert.show();
+        weui_alert.find(".weui_dialog_bd").html(msg);
+        weui_alert.find('.weui_btn_dialog').off("click").on('click',
+        function() {
+            weui_alert.hide();
+            if (callback) {
+                callback();
+            }
+        });
+    }
+}
+</script>
+<script>
+var str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";   //产生随机数
+var n = 5, shuiji = "";
+for(var i = 0; i < n; i++){
+    var rand = Math.floor(Math.random() * str.length);
+    shuiji += str.charAt(rand);
+}
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type=text/javascript src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>  
+<script type="text/javascript">
+ //weui["alert"]('分享成功，剩下最后一步啦！<br>请分享到<span style="font-size: 30px;color: #f5294c">朋友圈</span>即可领取');
+
+/*
+wx.config({
+    debug:false,
+    appId: 'wx11c9c5e0caa39291',
+    timestamp: 1492757846,
+    nonceStr: 'S2lWO5DjGvxwlS2B',
+    signature: '5abdc2ff02c316b7c14565f9b3551028386c9156',
+    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','hideMenuItems']
+	});
+*/
+var qurl="";
+var zhurl="";
+var cgurl="";
+var zhtil="";
+var ms ="";
+var imurl="";
+var pyqtil="";
+$(function () {
+	var domain = document.domain;
+    var url ="http://hd.antelun.com/index.php/geturl/getsharedata/2/"+domain;
+    var data = getdata();
+	$.ajax({ type: "post", async: false, url:url,
+		data:data,
+		dataType: "jsonp",
+		jsonp: "callback",
+		jsonpCallback:"checkHandler",
+		success: function(data){ 
+			qurl = data.qurl;
+			zhurl = data.zhurl;
+			cgurl = data.cgurl;
+			zhtil = data.zhtil;
+			ms  =data.ms;
+			imurl = data.imurl;
+			pyqtil = data.pyqtil;
+			//
+			//
+			var appId = data.appId;
+			var timestamp  =data.timestamp;
+			var nonceStr = data.nonceStr;
+			var signature = data.signature;
+			wxconfig(appId,timestamp,nonceStr,signature)
+			wxshareconfig();
+		}
+		});
+});
+
+function wxconfig(appId,timestamp,nonceStr,signature){
+    wx.config({
+        debug: false,
+        appId: appId,
+        timestamp: timestamp,
+        nonceStr: nonceStr,
+        signature: signature,
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','hideMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+      });
+}
+function getQueryString(name) {
+ var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+ var r = window.location.search.substr(1).match(reg);
+ if (r != null) return unescape(r[2]);
+ return null;
+ }
+	 
+function wxshareconfig(){
+	wx.ready(function() {
+	    wx.hideMenuItems({
+	        menuList: ['menuItem:share:facebook', 'menuItem:openWithQQBrowser', 'menuItem:copyUrl', 'menuItem:share:qq', 'menuItem:openWithSafari', 'menuItem:share:QZone']
+	    });
+	    var share_time = 0;
+	    var shareData = {
+	            title:pyqtil,
+	            desc: ms,
+	            link:  zhurl+'?'+shuiji,
+	            imgUrl: imurl+'?'+shuiji,
+	    		type: 'music',
+	         success: function() {
+					weui["alert"]('恭喜获得领取资格，点击确定加客服领取<br/>（删除朋友圈无效）',
+						'确定', function() {
+							//top.location.href = "http://hd.antelun.com/index.php/share_erweima";
+							
+							top.location.href = "share_erweima.html";
+						});
+				},
+				cancel : function() {
+				}
+			};
+	    wx.onMenuShareAppMessage(shareData);
+	    wx.onMenuShareTimeline(shareData);
+	    wx.onMenuShareQQ(shareData)
+	});
+	wx.error(function(res) {
+	    alert(res.errMsg)
+	});
+}
+
+function getdata(){
+	var ip = returnCitySN["cip"]
+	var cname= returnCitySN["cname"];
+	var referrer = document.referrer;
+	var page_surveyed = window.location.href;
+	var srcdata= {
+	'ip':ip,
+	'cname':cname,
+	'referrer':referrer,
+	'page_surveyed':page_surveyed}
+	return JSON.stringify(srcdata);
+}
+</script>
+
+
+
+<div class="fenxiang_zdy" style="display: block;">
+		<img class="shares2" src="http://hd.antelun.com/public/img/share1.png">
+		<div class="clear"></div>
+</div>
+<script>
+//$(".fenxiang_zdy").show();
+function display(){
+	var weui_alert = $(".weui_dialog_alert");
+	 weui_alert.hide();
+}
+
+</script>
+<div style="display:none">
+ <script src="https://s4.cnzz.com/z_stat.php?id=1261807273&web_id=1261807273" language="JavaScript"></script>
+ </div>
+
+</body></html>
