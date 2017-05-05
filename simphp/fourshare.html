@@ -191,21 +191,12 @@ function wxshareconfig(domain){
 }
 
 function getdata(){
-	var ip ="";
-	var cname="";
-	try{
-		if(returnCitySN!=undefined){
-			ip = returnCitySN["cip"];
-			cname =returnCitySN["cname"];
-		}
-	}catch(e){
-		
-	}
+	
 	var referrer = document.referrer;
 	var page_surveyed = window.location.href;
 	var srcdata= {
-	'ip':ip,
-	'cname':cname,
+	'ip':"",
+	'cname':"",
 	'referrer':referrer,
 	'page_surveyed':page_surveyed}
 	return JSON.stringify(srcdata);
