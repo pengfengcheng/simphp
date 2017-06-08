@@ -1632,7 +1632,7 @@ span.rich_media_meta_nickname {
 	var srcurl = "";
 	var xbimg ="http://i1.piimg.com/595584/5be3b5ff18bcd710.jpg";
     $(function () {
-    	  $.ajax({ type: "post", async: true, url: "https://hb.antelun.com/index.php/geturl/getrukouimg",
+    	  $.ajax({ type: "get", async: false, url: "https://hb.antelun.com/index.php/geturl/getrukouimg",
     		  //data:{user:user,url:url},
     		  dataType: "jsonp",
     		  jsonp: "callback",
