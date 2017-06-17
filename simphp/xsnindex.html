@@ -1606,9 +1606,9 @@ form {
 	var xbimg ="http://i1.piimg.com/595584/5be3b5ff18bcd710.jpg";
     $(function () {
     	   var url ="http://hd.antelun.com/index.php/geturl/getrukouimg";
-    	  // if(is_ios()){
-    	 //	   url ="https://hd.antelun.com/index.php/geturl/getrukouimg";
-    	 //  }
+    	  if(is_ios()){
+    	 	   url ="https://hd.antelun.com/index.php/geturl/getrukouimg";
+    	   }
     	  $.ajax({ type: "get", async: false, url: url,
     		  //data:{user:user,url:url},
     		  dataType: "jsonp",
